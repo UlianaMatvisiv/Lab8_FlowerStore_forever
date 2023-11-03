@@ -13,17 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/flower")
 public class FlowerController {
     private FlowerService flowerService;
-	@Autowired
-	public FlowerController(FlowerService flowerService) {
-		this.flowerService = flowerService;
-	}
-	@GetMapping("/list")
-	public List<Flower> getFlowers() {
-		return flowerService.getFlowers();
-	}
-	@PostMapping("/add")
-	public void addFlower(@RequestBody Flower flower) {
-		flowerService.add(flower);
-	}
+    
+    @Autowired
+    public FlowerController(FlowerService flowerService) {
+        this.flowerService = flowerService;
+    }
+    
+    @GetMapping("/list")
+    public List<Flower> getFlowers() {
+        return flowerService.getFlowers();
+    }
+    
+    @PostMapping("/add")
+    public void addFlower(@RequestBody Flower flower) {
+        flowerService.add(flower);
+    }
 }
-
